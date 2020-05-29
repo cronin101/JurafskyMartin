@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Xunit;
 
-namespace Chapter2.Tests
+namespace Chapter2.PartOne.Tests
 {
     public class UnitTests
     {
@@ -28,7 +28,7 @@ namespace Chapter2.Tests
         public void TestOnePointOne()
         {
             PerformTestCasesOnRegex(
-                Solutions.OnePointOne(),
+                Solutions.One(),
                 shouldMatch: new[] { "Alphabeticstring" },
                 shouldntMatch: new[] { "non-alphabetic string" });
         }
@@ -37,7 +37,7 @@ namespace Chapter2.Tests
         public void TestOnePointTwo()
         {
             PerformTestCasesOnRegex(
-                Solutions.OnePointTwo(),
+                Solutions.Two(),
                 shouldMatch: new[]
                 {
                     "lowercasestringendinginb",
@@ -53,7 +53,7 @@ namespace Chapter2.Tests
         public void TestOnePointThree()
         {
             PerformTestCasesOnRegex(
-                Solutions.OnePointThree(),
+                Solutions.Three(),
                 shouldMatch: new[]
                 {
                     "Humbert Humbert",
@@ -70,7 +70,7 @@ namespace Chapter2.Tests
         public void TestOnePointFour()
         {
             PerformTestCasesOnRegex(
-                Solutions.OnePointFour(),
+                Solutions.Four(),
                 shouldMatch: new[]
                 {
                     "b",
@@ -89,7 +89,7 @@ namespace Chapter2.Tests
         public void TestOnePointFive()
         {
             PerformTestCasesOnRegex(
-                Solutions.OnePointFive(),
+                Solutions.Five(),
                 shouldMatch: new[]
                 {
                     "6 balloons",
@@ -108,7 +108,7 @@ namespace Chapter2.Tests
         public void TestOnePointSix()
         {
             PerformTestCasesOnRegex(
-                Solutions.OnePointSix(),
+                Solutions.Six(),
                 shouldMatch: new[]
                 {
                     "the raven is in the grotto",
@@ -128,7 +128,7 @@ namespace Chapter2.Tests
         [Fact]
         public void TestOnePointSeven()
         {
-            var regex = Solutions.OnePointSeven();
+            var regex = Solutions.Seven();
             Assert.Equal("Dave", regex.Match("Dave was angry").Groups[1].Value);
             Assert.Equal("Surprisingly", regex.Match("Surprisingly, punctuation is not a problem").Groups[1].Value);
         }

@@ -19,7 +19,7 @@ namespace Chapter2.PartOne
         // The set of all strings with only words repeating twice
         public static Regex Three()
         {
-            return new Regex("^(\\w+) \\1$", RegexOptions.Compiled);
+            return new Regex(@"^(\w+) \1$", RegexOptions.Compiled);
         }
 
         // The set of all strings from {a, b} where each a is sandwiched between b
@@ -38,7 +38,7 @@ namespace Chapter2.PartOne
         public static Regex Six()
         {
             return new Regex(
-                "^(.+\\b)*((grotto(\\b.+)*\\braven)|(raven(\\b.+)*\\bgrotto))(\\b.+)*$",
+                @"^(.+\b)*((grotto(\b.+)*\braven)|(raven(\b.+)*\bgrotto))(\b.+)*$",
                 RegexOptions.Compiled);
         }
 

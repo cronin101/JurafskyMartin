@@ -20,3 +20,10 @@ dotnet new xunit -o Chapter2.Tests
 dotnet add .\Chapter2.Tests\Chapter2.Tests.csproj reference .\Chapter2\Chapter2.csproj
 dotnet test
 ```
+
+## Creating a console-app class
+
+```bash
+dotnet new console
+dotnet run
+```

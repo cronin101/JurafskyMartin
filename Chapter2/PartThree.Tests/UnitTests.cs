@@ -18,6 +18,17 @@ namespace Chapter2.PartThree.Tests
             Assert.Equal("twenty dollars", Solutions.StringGenerator(20));
             Assert.Equal("twenty one dollars", Solutions.StringGenerator(21));
             Assert.Equal("fifty six dollars", Solutions.StringGenerator(56));
+            Assert.Equal("one hundred dollars", Solutions.StringGenerator(100));
+            Assert.Equal("one hundred and one dollars", Solutions.StringGenerator(101));
+            Assert.Equal("six hundred and fifty nine dollars", Solutions.StringGenerator(659));
+            Assert.Equal("one thousand dollars", Solutions.StringGenerator(1000));
+            Assert.Equal("one thousand and one dollars", Solutions.StringGenerator(1001));
+            Assert.Equal("one thousand and fifty one dollars", Solutions.StringGenerator(1051));
+            Assert.Equal("one thousand one hundred and fifty one dollars", Solutions.StringGenerator(1151));
+            Assert.Equal("nine thousand five hundred and eighty four dollars", Solutions.StringGenerator(9584));
+            Assert.Equal("ten thousand dollars", Solutions.StringGenerator(10000));
+            Assert.Equal("one hundred thousand dollars", Solutions.StringGenerator(100000));
+            Assert.Equal("nine hundred and ninety nine thousand nine hundred and ninety nine dollars", Solutions.StringGenerator(999999));
         }
         [Fact]
         public void TestCanHandleBaseDollars()
@@ -41,7 +52,7 @@ namespace Chapter2.PartThree.Tests
         {
             TestUtils.PerformTestCasesOnRegex(
                 Solutions.One(),
-                Enumerable.Range(1, 99).Select(n => Solutions.StringGenerator(n)).ToList(),
+                Enumerable.Range(1, 100000).Select(n => Solutions.StringGenerator(n)).ToList(),
                 new string[0]
             );
         }

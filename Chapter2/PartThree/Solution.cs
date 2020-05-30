@@ -7,15 +7,19 @@ namespace Chapter2.PartThree
     public class Solutions
     {
         private const string SingleDigitsPattern = @"one";
-        private const string PluralDigitsPattern = @"two|three|four|five|six|seven|eight|nine|ten";
-        private const string TeenPattern = @"eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen";
-        private const string TensPattern = @"twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety";
+        private const string PluralDigitsPattern = @"(two|three|four|five|six|seven|eight|nine|ten)";
+        private const string TeenPattern = @"(eleven|twelve|thirteen|fourteen|fifteen|sixteen|seventeen|eighteen|nineteen)";
+        private const string TensPattern = @"(twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety)";
 
         public static Regex One()
         {
-            var allDigitsPattern = $"{SingleDigitsPattern}|{PluralDigitsPattern}";
-            var simpleDollarsPattern = $"({SingleDigitsPattern} dollar|({PluralDigitsPattern}|{TeenPattern}|(({TensPattern})( ({SingleDigitsPattern}))?)) dollars)$";
-            return new Regex(simpleDollarsPattern);
+            var allDigitsPattern = $"({SingleDigitsPattern}|{PluralDigitsPattern})";
+            var singleDollarPattern = $"{SingleDigitsPattern} dollar";
+            var simplePattern = $"({PluralDigitsPattern}|{TeenPattern})";
+            var tensAndDigitsPattern = $"{TensPattern}( {SingleDigitsPattern})?";
+
+            var combinedPattern = $"({singleDollarPattern}|({simplePattern}|{tensAndDigitsPattern}) dollars)$";
+            return new Regex(combinedPattern);
         }
 
         public static string StringGenerator(int input)

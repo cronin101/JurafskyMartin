@@ -6,37 +6,20 @@ namespace Chapter2.PartOne.Tests
 {
     public class UnitTests
     {
-        public static void TestRegex(Regex regex, string input, bool shouldMatch)
-        {
-            Assert.True(!shouldMatch ^ regex.Match(input).Success, input);
-        }
-
-        public static void PerformTestCasesOnRegex(Regex regex, IList<string> shouldMatch, IList<string> shouldntMatch)
-        {
-            foreach (var testCase in shouldMatch)
-            {
-                TestRegex(regex, testCase, true);
-            }
-
-            foreach (var testCase in shouldntMatch)
-            {
-                TestRegex(regex, testCase, false);
-            }
-        }
 
         [Fact]
-        public void TestOnePointOne()
+        public void TestOne()
         {
-            PerformTestCasesOnRegex(
+            TestUtils.PerformTestCasesOnRegex(
                 Solutions.One(),
                 shouldMatch: new[] { "Alphabeticstring" },
                 shouldntMatch: new[] { "non-alphabetic string" });
         }
 
         [Fact]
-        public void TestOnePointTwo()
+        public void TestTwo()
         {
-            PerformTestCasesOnRegex(
+            TestUtils.PerformTestCasesOnRegex(
                 Solutions.Two(),
                 shouldMatch: new[]
                 {
@@ -50,9 +33,9 @@ namespace Chapter2.PartOne.Tests
         }
 
         [Fact]
-        public void TestOnePointThree()
+        public void TestThree()
         {
-            PerformTestCasesOnRegex(
+            TestUtils.PerformTestCasesOnRegex(
                 Solutions.Three(),
                 shouldMatch: new[]
                 {
@@ -67,9 +50,9 @@ namespace Chapter2.PartOne.Tests
         }
 
         [Fact]
-        public void TestOnePointFour()
+        public void TestFour()
         {
-            PerformTestCasesOnRegex(
+            TestUtils.PerformTestCasesOnRegex(
                 Solutions.Four(),
                 shouldMatch: new[]
                 {
@@ -86,9 +69,9 @@ namespace Chapter2.PartOne.Tests
         }
 
         [Fact]
-        public void TestOnePointFive()
+        public void TestFive()
         {
-            PerformTestCasesOnRegex(
+            TestUtils.PerformTestCasesOnRegex(
                 Solutions.Five(),
                 shouldMatch: new[]
                 {
@@ -105,9 +88,9 @@ namespace Chapter2.PartOne.Tests
         }
 
         [Fact]
-        public void TestOnePointSix()
+        public void TestSix()
         {
-            PerformTestCasesOnRegex(
+            TestUtils.PerformTestCasesOnRegex(
                 Solutions.Six(),
                 shouldMatch: new[]
                 {
@@ -126,7 +109,7 @@ namespace Chapter2.PartOne.Tests
         }
 
         [Fact]
-        public void TestOnePointSeven()
+        public void TestSeven()
         {
             var regex = Solutions.Seven();
             Assert.Equal("Dave", regex.Match("Dave was angry").Groups[1].Value);

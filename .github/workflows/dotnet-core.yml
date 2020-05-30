@@ -10,6 +10,8 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    env:
+      working-directory: ./Chapter2
 
     steps:
     - uses: actions/checkout@v2
@@ -17,8 +19,6 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 3.1.101
-    - name: Change directory
-      run: cd ./Chapter2
     - name: Install dependencies
       run: dotnet restore
     - name: Build

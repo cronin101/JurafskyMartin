@@ -14,7 +14,7 @@ namespace Chapter2.PartThree
         public static Regex One()
         {
             var allDigitsPattern = $"{SingleDigitsPattern}|{PluralDigitsPattern}";
-            var simpleDollarsPattern = $"({SingleDigitsPattern} dollar|({PluralDigitsPattern}|{TeenPattern}) dollars)$";
+            var simpleDollarsPattern = $"({SingleDigitsPattern} dollar|({PluralDigitsPattern}|{TeenPattern}|(({TensPattern})( ({SingleDigitsPattern}))?)) dollars)$";
             return new Regex(simpleDollarsPattern);
         }
 
@@ -40,7 +40,7 @@ namespace Chapter2.PartThree
                         "7" => (70, "seventy"),
                         "6" => (60, "sixty"),
                         "5" => (50, "fifty"),
-                        "4" => (40, "fourty"),
+                        "4" => (40, "forty"),
                         "3" => (30, "thirty"),
                         "2" => (20, "twenty"),
                         "1" => lastTwoDigits.Substring(1) switch

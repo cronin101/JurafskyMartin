@@ -24,6 +24,16 @@ namespace Chapter2.PartThree.Tests
         }
 
         [Fact]
+        public void TestCanHandleCents()
+        {
+            TestUtils.PerformTestCasesOnRegex(
+                Solutions.One(),
+                new[] { "one cent", "one dollar and one cent", "ninety nine cents", "eight dollars and sixty two cents", "nine dollars and one cent" },
+                new[] { "one cents", "one dollar one cent" }
+            );
+        }
+
+        [Fact]
         public void TestUsingStringGenerator()
         {
             TestUtils.PerformTestCasesOnRegex(

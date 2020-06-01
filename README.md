@@ -9,4 +9,4 @@ Had the book lying around, so figured I might as well do the exercises.
   * 2.1
   * 2.2
   * 2.3
-  * 2.4 (In progress)
+  * 2.4

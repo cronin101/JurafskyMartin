@@ -12,7 +12,7 @@ namespace Chapter2.PartThree.Tests
             TestUtils.PerformTestCasesOnRegex(
                 Solutions.One(),
                 new[] { "one dollar", "two dollars", "nine dollars", "ten dollars" },
-                new[] { "one dollars", "two dollar", "nine dollar", "ten dollar" });
+                new[] { "", "one dollars", "two dollar", "nine dollar", "ten dollar" });
         }
         [Fact]
         public void TestCanHandleTeenDollars()
@@ -20,7 +20,7 @@ namespace Chapter2.PartThree.Tests
             TestUtils.PerformTestCasesOnRegex(
                 Solutions.One(),
                 new[] { "eleven dollars", "fifteen dollars" },
-                new[] { "eleven dollar", "fifteen dollar" });
+                new[] { "", "eleven dollar", "fifteen dollar" });
         }
 
         [Fact]
@@ -29,7 +29,7 @@ namespace Chapter2.PartThree.Tests
             TestUtils.PerformTestCasesOnRegex(
                 Solutions.One(),
                 new[] { "one cent", "one dollar and one cent", "ninety nine cents", "eight dollars and sixty two cents", "nine dollars and one cent" },
-                new[] { "one cents", "one dollar one cent" }
+                new[] { "", "one cents", "one dollar one cent" }
             );
         }
 
